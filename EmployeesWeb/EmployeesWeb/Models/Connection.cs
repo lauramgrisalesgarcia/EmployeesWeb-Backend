@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using EmployeesWeb.Models;
 
 namespace EmployeesWeb.Models;
 
@@ -10,7 +9,7 @@ public class Connection: DbContext
     {
     }
 
-    public DbSet<Employee> employees { get; set; } = null!;
+    public DbSet<EmployeeDto> employees { get; set; } = null!;
 
-public DbSet<EmployeesWeb.Models.Role> Role { get; set; } = default!;
+public DbSet<Role> Role { get; set; } = default!;
 }

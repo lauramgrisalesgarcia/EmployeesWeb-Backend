@@ -1,9 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using EmployeesWeb.Models;
-using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
-using System.Xml.Linq;
-using Microsoft.DotNet.Scaffolding.Shared.Messaging;
 
 namespace EmployeesWeb.Controllers
 {
@@ -20,14 +17,14 @@ namespace EmployeesWeb.Controllers
 
         // GET: api/Employees
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Employee>>> Getemployees()
+        public async Task<ActionResult<IEnumerable<EmployeeDto>>> Getemployees()
         {
             return await _context.employees.ToListAsync();
         }
 
         // GET: api/Employees/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Employee>> GetEmployee(long id)
+        public async Task<ActionResult<EmployeeDto>> GetEmployee(long id)
         {
             var employee = await _context.employees.FindAsync(id);
 
@@ -44,62 +41,59 @@ namespace EmployeesWeb.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutEmployee(long id, Employee employee)
         {
-            if (id != employee.Id)
-            {
-                return BadRequest();
-            }
-
             try
             {
-                if (!EmployeeEmailExists(id, employee.Email))
+                if (EmployeeExists(id) 
+                    && !EmployeeNotExists (employee.Identification, employee.Email) 
+                    && EmployeeExists (id, employee.Identification))
                 {
                     await _context.SaveChangesAsync();
                 }
                 
             }
-            catch (DbUpdateConcurrencyException)
+            catch (Exception e)
             {
-                if (!EmployeeExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {                    
-                    throw;
-                }
+                return NotFound();
             }
 
             return NoContent();
+
+            //id y el empoyee id empaten. Que corresponda uno con el otro. Sino, que no permita editar
         }
 
         // POST: api/Employees
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Employee>> PostEmployee(Employee employee)
+        public async Task<ActionResult<EmployeeDto>> PostEmployee(Employee employee)
         {
-            _context.employees.Add(employee);
-            //await _context.SaveChangesAsync();
+            var newEmployee = new EmployeeDto
+            {
+                Identification = employee.Identification,
+                Name = employee.Name,
+                Surname = employee.Surname,
+                DateofBirth = employee.DateOfBirth,
+                Email = employee.Email,
+                RoleId = employee.RoleId
+            };
 
             try
             {
-                if (!EmployeeEmailExists(employee.Id, employee.Email))
+                if (!EmployeeNotExists(employee.Identification, employee.Email))
                 {
+                    _context.employees.Add(newEmployee);
                     await _context.SaveChangesAsync();
-                }
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (EmployeeExists(employee.Id))
-                {
-                    return NotFound();
                 }
                 else
                 {
-                    throw;
+                    return Conflict();
                 }
             }
+            catch (Exception e)
+            {
+                return BadRequest(e);
+            }
 
-            return CreatedAtAction(nameof(GetEmployee), new { id = employee.Id }, employee);
+            return await GetEmployee(newEmployee.Id);
         }
 
         // DELETE: api/Employees/5
@@ -107,6 +101,7 @@ namespace EmployeesWeb.Controllers
         public async Task<IActionResult> DeleteEmployee(long id)
         {
             var employee = await _context.employees.FindAsync(id);
+
             if (employee == null)
             {
                 return NotFound();
@@ -123,14 +118,14 @@ namespace EmployeesWeb.Controllers
             return _context.employees.Any(e => e.Id == id);
         }
 
-        private bool EmployeeEmailExists(long id, string email)
+        private bool EmployeeExists(long id, string identification)
         {
-            return _context.employees.Any(e => e.Email.Equals(email) && e.Id != id);            
+            return _context.employees.Any(e => e.Id == id && e.Identification.Equals(identification));
         }
 
-        private bool EmployeeNameExists(string name, string? surname, DateOnly dateOfBirth)
+        private bool EmployeeNotExists(string identification, string email)
         {
-            return _context.employees.Any(e => e.Name.Equals(name) && e.Surname.Equals(surname) && e.DateOfBirth.Equals(dateOfBirth));
+            return _context.employees.Any(e => e.Identification.Equals(identification) || e.Email.Equals(email));
         }
     }
 }

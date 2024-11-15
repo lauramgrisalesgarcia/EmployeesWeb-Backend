@@ -5,8 +5,7 @@ namespace EmployeesWeb.Models
 {
     public class Employee
     {
-        [Key]
-        public long Id { get; set; }
+        public required string Identification { get; set; }
 
         [Required]
         [StringLength(100, MinimumLength = 4, ErrorMessage = "Name lenght must be between {2} and {1}.")]
@@ -20,7 +19,6 @@ namespace EmployeesWeb.Models
 
         [Required]
         [EmailAddress]
-        [Remote("EmployeeEmailExists", "Employee", ErrorMessage = "The employee email already exist")]
         public string Email { get; set; }
 
         [Required]

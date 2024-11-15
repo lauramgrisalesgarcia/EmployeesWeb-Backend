@@ -241,3 +241,4 @@ C:\xampp\htdocs\project\EmployeesWeb-Backend\EmployeesWeb\EmployeesWeb\bin\Debug
 C:\xampp\htdocs\project\EmployeesWeb-Backend\EmployeesWeb\EmployeesWeb\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 C:\xampp\htdocs\project\EmployeesWeb-Backend\EmployeesWeb\EmployeesWeb\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\xampp\htdocs\project\EmployeesWeb-Backend\EmployeesWeb\EmployeesWeb\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+C:\xampp\htdocs\project\EmployeesWeb-Backend\EmployeesWeb\EmployeesWeb\obj\Debug\net8.0\EmployeesWeb.sourcelink.json
