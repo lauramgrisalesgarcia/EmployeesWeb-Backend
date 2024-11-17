@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "C:\\xampp\\htdocs\\project\\EmployeesWeb-Backend\\EmployeesWeb\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{41F25785-7A66-432E-8928-8914D23C322A}|EmployeesWeb\\EmployeesWeb.csproj|c:\\xampp\\htdocs\\project\\employeesweb-backend\\employeesweb\\employeesweb\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41F25785-7A66-432E-8928-8914D23C322A}|EmployeesWeb\\EmployeesWeb.csproj|solutionrelative:employeesweb\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{41F25785-7A66-432E-8928-8914D23C322A}|EmployeesWeb\\EmployeesWeb.csproj|c:\\xampp\\htdocs\\project\\employeesweb-backend\\employeesweb\\employeesweb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{41F25785-7A66-432E-8928-8914D23C322A}|EmployeesWeb\\EmployeesWeb.csproj|solutionrelative:employeesweb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{41F25785-7A66-432E-8928-8914D23C322A}|EmployeesWeb\\EmployeesWeb.csproj|c:\\xampp\\htdocs\\project\\employeesweb-backend\\employeesweb\\employeesweb\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{41F25785-7A66-432E-8928-8914D23C322A}|EmployeesWeb\\EmployeesWeb.csproj|solutionrelative:employeesweb\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41F25785-7A66-432E-8928-8914D23C322A}|EmployeesWeb\\EmployeesWeb.csproj|c:\\xampp\\htdocs\\project\\employeesweb-backend\\employeesweb\\employeesweb\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{41F25785-7A66-432E-8928-8914D23C322A}|EmployeesWeb\\EmployeesWeb.csproj|solutionrelative:employeesweb\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41F25785-7A66-432E-8928-8914D23C322A}|EmployeesWeb\\EmployeesWeb.csproj|c:\\xampp\\htdocs\\project\\employeesweb-backend\\employeesweb\\employeesweb\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41F25785-7A66-432E-8928-8914D23C322A}|EmployeesWeb\\EmployeesWeb.csproj|solutionrelative:employeesweb\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{41F25785-7A66-432E-8928-8914D23C322A}|EmployeesWeb\\EmployeesWeb.csproj|c:\\xampp\\htdocs\\project\\employeesweb-backend\\employeesweb\\employeesweb\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41F25785-7A66-432E-8928-8914D23C322A}|EmployeesWeb\\EmployeesWeb.csproj|solutionrelative:employeesweb\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{41F25785-7A66-432E-8928-8914D23C322A}|EmployeesWeb\\EmployeesWeb.csproj|c:\\xampp\\htdocs\\project\\employeesweb-backend\\employeesweb\\employeesweb\\models\\employeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,14 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{41F25785-7A66-432E-8928-8914D23C322A}|EmployeesWeb\\EmployeesWeb.csproj|c:\\xampp\\htdocs\\project\\employeesweb-backend\\employeesweb\\employeesweb\\controllers\\rolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{41F25785-7A66-432E-8928-8914D23C322A}|EmployeesWeb\\EmployeesWeb.csproj|solutionrelative:employeesweb\\controllers\\rolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41F25785-7A66-432E-8928-8914D23C322A}|EmployeesWeb\\EmployeesWeb.csproj|c:\\xampp\\htdocs\\project\\employeesweb-backend\\employeesweb\\employeesweb\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41F25785-7A66-432E-8928-8914D23C322A}|EmployeesWeb\\EmployeesWeb.csproj|solutionrelative:employeesweb\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{41F25785-7A66-432E-8928-8914D23C322A}|EmployeesWeb\\EmployeesWeb.csproj|c:\\xampp\\htdocs\\project\\employeesweb-backend\\employeesweb\\employeesweb\\models\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41F25785-7A66-432E-8928-8914D23C322A}|EmployeesWeb\\EmployeesWeb.csproj|solutionrelative:employeesweb\\models\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{41F25785-7A66-432E-8928-8914D23C322A}|EmployeesWeb\\EmployeesWeb.csproj|c:\\xampp\\htdocs\\project\\employeesweb-backend\\employeesweb\\employeesweb\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,63 +34,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\project\\EmployeesWeb-Backend\\EmployeesWeb\\EmployeesWeb\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "EmployeesWeb\\appsettings.Development.json",
-              "ToolTip": "C:\\xampp\\htdocs\\project\\EmployeesWeb-Backend\\EmployeesWeb\\EmployeesWeb\\appsettings.Development.json",
-              "RelativeToolTip": "EmployeesWeb\\appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-14T23:45:41.382Z",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\project\\EmployeesWeb-Backend\\EmployeesWeb\\EmployeesWeb\\Program.cs",
+              "RelativeDocumentMoniker": "EmployeesWeb\\Program.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\project\\EmployeesWeb-Backend\\EmployeesWeb\\EmployeesWeb\\Program.cs",
+              "RelativeToolTip": "EmployeesWeb\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T00:39:23.757Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\project\\EmployeesWeb-Backend\\EmployeesWeb\\EmployeesWeb\\appsettings.json",
-              "RelativeDocumentMoniker": "EmployeesWeb\\appsettings.json",
-              "ToolTip": "C:\\xampp\\htdocs\\project\\EmployeesWeb-Backend\\EmployeesWeb\\EmployeesWeb\\appsettings.json",
-              "RelativeToolTip": "EmployeesWeb\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-14T23:45:35.954Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Connection.cs",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\project\\EmployeesWeb-Backend\\EmployeesWeb\\EmployeesWeb\\Models\\Connection.cs",
-              "RelativeDocumentMoniker": "EmployeesWeb\\Models\\Connection.cs",
-              "ToolTip": "C:\\xampp\\htdocs\\project\\EmployeesWeb-Backend\\EmployeesWeb\\EmployeesWeb\\Models\\Connection.cs",
-              "RelativeToolTip": "EmployeesWeb\\Models\\Connection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T20:22:39.791Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "Employee.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\project\\EmployeesWeb-Backend\\EmployeesWeb\\EmployeesWeb\\Models\\Employee.cs",
               "RelativeDocumentMoniker": "EmployeesWeb\\Models\\Employee.cs",
               "ToolTip": "C:\\xampp\\htdocs\\project\\EmployeesWeb-Backend\\EmployeesWeb\\EmployeesWeb\\Models\\Employee.cs",
               "RelativeToolTip": "EmployeesWeb\\Models\\Employee.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-13T22:10:59.603Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "EmployeeDto.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\project\\EmployeesWeb-Backend\\EmployeesWeb\\EmployeesWeb\\Models\\EmployeeDto.cs",
               "RelativeDocumentMoniker": "EmployeesWeb\\Models\\EmployeeDto.cs",
@@ -116,19 +78,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\project\\EmployeesWeb-Backend\\EmployeesWeb\\EmployeesWeb\\Program.cs",
-              "RelativeDocumentMoniker": "EmployeesWeb\\Program.cs",
-              "ToolTip": "C:\\xampp\\htdocs\\project\\EmployeesWeb-Backend\\EmployeesWeb\\EmployeesWeb\\Program.cs",
-              "RelativeToolTip": "EmployeesWeb\\Program.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACIAAAAoAAAAAAAAAA==",
+              "Title": "EmployeesController.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\project\\EmployeesWeb-Backend\\EmployeesWeb\\EmployeesWeb\\Controllers\\EmployeesController.cs",
+              "RelativeDocumentMoniker": "EmployeesWeb\\Controllers\\EmployeesController.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\project\\EmployeesWeb-Backend\\EmployeesWeb\\EmployeesWeb\\Controllers\\EmployeesController.cs*",
+              "RelativeToolTip": "EmployeesWeb\\Controllers\\EmployeesController.cs*",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAcwFkAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T16:41:20.001Z",
+              "WhenOpened": "2024-11-13T23:25:26.638Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
               "Title": "Role.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\project\\EmployeesWeb-Backend\\EmployeesWeb\\EmployeesWeb\\Models\\Role.cs",
               "RelativeDocumentMoniker": "EmployeesWeb\\Models\\Role.cs",
@@ -136,33 +98,19 @@
               "RelativeToolTip": "EmployeesWeb\\Models\\Role.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T16:06:49.293Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-14T16:06:49.293Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "RolesController.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\project\\EmployeesWeb-Backend\\EmployeesWeb\\EmployeesWeb\\Controllers\\RolesController.cs",
               "RelativeDocumentMoniker": "EmployeesWeb\\Controllers\\RolesController.cs",
               "ToolTip": "C:\\xampp\\htdocs\\project\\EmployeesWeb-Backend\\EmployeesWeb\\EmployeesWeb\\Controllers\\RolesController.cs",
               "RelativeToolTip": "EmployeesWeb\\Controllers\\RolesController.cs",
-              "ViewState": "AgIAAE8AAAAAAAAAAAAcwGYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAIwGYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-14T14:48:00.431Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "EmployeesController.cs",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\project\\EmployeesWeb-Backend\\EmployeesWeb\\EmployeesWeb\\Controllers\\EmployeesController.cs",
-              "RelativeDocumentMoniker": "EmployeesWeb\\Controllers\\EmployeesController.cs",
-              "ToolTip": "C:\\xampp\\htdocs\\project\\EmployeesWeb-Backend\\EmployeesWeb\\EmployeesWeb\\Controllers\\EmployeesController.cs",
-              "RelativeToolTip": "EmployeesWeb\\Controllers\\EmployeesController.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAwwCkAAABQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T23:25:26.638Z",
               "EditorCaption": ""
             }
           ]

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using EmployeesWeb.Models;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace EmployeesWeb.Controllers
 {
@@ -14,7 +15,6 @@ namespace EmployeesWeb.Controllers
         {
             _context = context;
         }
-
         // GET: api/Employees
         [HttpGet]
         public async Task<ActionResult<IEnumerable<EmployeeDto>>> Getemployees()
@@ -30,7 +30,7 @@ namespace EmployeesWeb.Controllers
 
             if (employee == null)
             {
-                return NotFound();
+                return NotFound("El empleado no existe.");
             }
 
             return employee;
@@ -44,7 +44,6 @@ namespace EmployeesWeb.Controllers
             try
             {
                 if (EmployeeExists(id) 
-                    && !EmployeeNotExists (employee.Identification, employee.Email) 
                     && EmployeeExists (id, employee.Identification))
                 {
                     await _context.SaveChangesAsync();
@@ -53,12 +52,10 @@ namespace EmployeesWeb.Controllers
             }
             catch (Exception e)
             {
-                return NotFound();
+                return NotFound("El empleado no existe.");
             }
 
-            return NoContent();
-
-            //id y el empoyee id empaten. Que corresponda uno con el otro. Sino, que no permita editar
+            return Ok();
         }
 
         // POST: api/Employees
@@ -80,12 +77,19 @@ namespace EmployeesWeb.Controllers
             {
                 if (!EmployeeNotExists(employee.Identification, employee.Email))
                 {
-                    _context.employees.Add(newEmployee);
-                    await _context.SaveChangesAsync();
+                    if (EmployeeAge(employee.DateOfBirth))
+                    {
+                        _context.employees.Add(newEmployee);
+                        await _context.SaveChangesAsync();
+                    }
+                    else
+                    {
+                        return BadRequest("La edad debe ser mayor a 18 años y menor a 65 años.");
+                    }
                 }
                 else
                 {
-                    return Conflict();
+                    return Conflict("El empleado ya existe.");
                 }
             }
             catch (Exception e)
@@ -126,6 +130,14 @@ namespace EmployeesWeb.Controllers
         private bool EmployeeNotExists(string identification, string email)
         {
             return _context.employees.Any(e => e.Identification.Equals(identification) || e.Email.Equals(email));
+        }
+
+        private bool EmployeeAge(DateOnly dateOfBirth)
+        {
+            DateTime todayDate = DateTime.Now;
+            DateOnly minDate = DateOnly.FromDateTime(todayDate.AddYears(-18));
+            DateOnly maxDate = DateOnly.FromDateTime(todayDate.AddYears(-65));
+            return (dateOfBirth < maxDate || dateOfBirth > minDate) ? false : true;
         }
     }
 }
