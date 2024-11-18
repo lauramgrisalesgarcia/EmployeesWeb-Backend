@@ -1,9 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using System.Data;
 using EmployeesWeb.Models;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using System.Data;
-using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace EmployeesWeb.Controllers
 {
@@ -55,16 +53,20 @@ namespace EmployeesWeb.Controllers
 
                 if (EmployeeExists(id, employee.Identification))
                 {
-                    existingEmployee.Name = employee.Name;
-                    existingEmployee.Surname = employee.Surname;
-                    existingEmployee.DateOfBirth = employee.DateOfBirth;
-                    existingEmployee.Email = employee.Email;
-                    existingEmployee.RoleId = employee.RoleId;
+                    if (!EmailExist(id, employee.Email))
+                    {
+                        existingEmployee.Name = employee.Name;
+                        existingEmployee.Surname = employee.Surname;
+                        existingEmployee.DateOfBirth = employee.DateOfBirth;
+                        existingEmployee.Email = employee.Email;
+                        existingEmployee.RoleId = employee.RoleId;
 
-                    _context.Employees.Update(existingEmployee);
-                    await _context.SaveChangesAsync();
+                        _context.Employees.Update(existingEmployee);
+                        await _context.SaveChangesAsync();
 
-                    return Ok();
+                        return Ok();
+                    }
+
                 }
 
                 return Conflict("Los datos ya existen.");
@@ -155,7 +157,7 @@ namespace EmployeesWeb.Controllers
             _context.Employees.RemoveRange(employeesToDelete);
             await _context.SaveChangesAsync();
 
-            return Ok(new { message = "Empleado eliminado", deletedIds = employeeIds });
+            return Ok(new { message = "Empleado(s) eliminado(s)", deletedIds = employeeIds });
         }
 
         private bool EmployeeExists(long id)
@@ -171,6 +173,11 @@ namespace EmployeesWeb.Controllers
         private bool EmployeeNotExists(string identification, string email)
         {
             return _context.Employees.Any(e => e.Identification.Equals(identification) || e.Email.Equals(email));
+        }
+
+        private bool EmailExist(long id, string email)
+        {
+            return _context.Employees.Any(e => e.Id != id && e.Email.Equals(email));
         }
 
         private bool EmployeeAge(DateOnly DateOfBirth)
