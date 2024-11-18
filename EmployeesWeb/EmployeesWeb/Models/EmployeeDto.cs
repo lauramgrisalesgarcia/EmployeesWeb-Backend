@@ -9,7 +9,7 @@ namespace EmployeesWeb.Models
         public required string Identification { get; set; }
         public required string Name { get; set; }
         public string? Surname { get; set; }
-        public DateOnly DateofBirth { get; set; }
+        public DateOnly DateOfBirth { get; set; }
         public required string Email { get; set; }
         public required long RoleId { get; set; }
     }

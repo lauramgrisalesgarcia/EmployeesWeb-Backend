@@ -2,6 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using EmployeesWeb.Models;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using System.Data;
+using System.Collections.Generic;
 
 namespace EmployeesWeb.Controllers
 {
@@ -19,14 +21,14 @@ namespace EmployeesWeb.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<EmployeeDto>>> Getemployees()
         {
-            return await _context.employees.ToListAsync();
+            return await _context.Employees.ToListAsync();
         }
 
         // GET: api/Employees/5
         [HttpGet("{id}")]
         public async Task<ActionResult<EmployeeDto>> GetEmployee(long id)
         {
-            var employee = await _context.employees.FindAsync(id);
+            var employee = await _context.Employees.FindAsync(id);
 
             if (employee == null)
             {
@@ -41,21 +43,37 @@ namespace EmployeesWeb.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutEmployee(long id, Employee employee)
         {
+            
             try
             {
-                if (EmployeeExists(id) 
-                    && EmployeeExists (id, employee.Identification))
+                var existingEmployee = await _context.Employees.FindAsync(id);
+
+                if (!EmployeeExists(id))
                 {
-                    await _context.SaveChangesAsync();
+                    return NotFound("El empleado no existe.");
                 }
-                
+
+                if (EmployeeExists(id, employee.Identification))
+                {
+                    existingEmployee.Name = employee.Name;
+                    existingEmployee.Surname = employee.Surname;
+                    existingEmployee.DateOfBirth = employee.DateOfBirth;
+                    existingEmployee.Email = employee.Email;
+                    existingEmployee.RoleId = employee.RoleId;
+
+                    _context.Employees.Update(existingEmployee);
+                    await _context.SaveChangesAsync();
+
+                    return Ok();
+                }
+
+                return Conflict("Los datos ya existen.");
+
             }
             catch (Exception e)
             {
                 return NotFound("El empleado no existe.");
             }
-
-            return Ok();
         }
 
         // POST: api/Employees
@@ -68,7 +86,7 @@ namespace EmployeesWeb.Controllers
                 Identification = employee.Identification,
                 Name = employee.Name,
                 Surname = employee.Surname,
-                DateofBirth = employee.DateOfBirth,
+                DateOfBirth = employee.DateOfBirth,
                 Email = employee.Email,
                 RoleId = employee.RoleId
             };
@@ -79,7 +97,7 @@ namespace EmployeesWeb.Controllers
                 {
                     if (EmployeeAge(employee.DateOfBirth))
                     {
-                        _context.employees.Add(newEmployee);
+                        _context.Employees.Add(newEmployee);
                         await _context.SaveChangesAsync();
                     }
                     else
@@ -89,7 +107,7 @@ namespace EmployeesWeb.Controllers
                 }
                 else
                 {
-                    return Conflict("El empleado ya existe.");
+                    return Conflict("Los datos ya existen.");
                 }
             }
             catch (Exception e)
@@ -104,40 +122,63 @@ namespace EmployeesWeb.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteEmployee(long id)
         {
-            var employee = await _context.employees.FindAsync(id);
+            var employee = await _context.Employees.FindAsync(id);
 
             if (employee == null)
             {
-                return NotFound();
+                return NotFound("El empleado no existe.");
             }
 
-            _context.employees.Remove(employee);
+            _context.Employees.Remove(employee);
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            return Ok();
+        }
+
+        [HttpDelete("list")]
+        public async Task<ActionResult> DeleteEmployees([FromBody] List<long> employeeIds)
+        {
+            if (employeeIds == null || employeeIds.Count == 0)
+            {
+                return BadRequest("No se han encontrado empleados para eliminar.");
+            }
+
+            var employeesToDelete = await _context.Employees
+                                                  .Where(e => employeeIds.Contains(e.Id))
+                                                  .ToListAsync();
+
+            if (employeesToDelete.Count == 0)
+            {
+                return NotFound("No se han encontrado empleados para eliminar.");
+            }
+
+            _context.Employees.RemoveRange(employeesToDelete);
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Empleado eliminado", deletedIds = employeeIds });
         }
 
         private bool EmployeeExists(long id)
         {
-            return _context.employees.Any(e => e.Id == id);
+            return _context.Employees.Any(e => e.Id == id);
         }
 
         private bool EmployeeExists(long id, string identification)
         {
-            return _context.employees.Any(e => e.Id == id && e.Identification.Equals(identification));
+            return _context.Employees.Any(e => e.Id == id && e.Identification.Equals(identification));
         }
 
         private bool EmployeeNotExists(string identification, string email)
         {
-            return _context.employees.Any(e => e.Identification.Equals(identification) || e.Email.Equals(email));
+            return _context.Employees.Any(e => e.Identification.Equals(identification) || e.Email.Equals(email));
         }
 
-        private bool EmployeeAge(DateOnly dateOfBirth)
+        private bool EmployeeAge(DateOnly DateOfBirth)
         {
             DateTime todayDate = DateTime.Now;
             DateOnly minDate = DateOnly.FromDateTime(todayDate.AddYears(-18));
             DateOnly maxDate = DateOnly.FromDateTime(todayDate.AddYears(-65));
-            return (dateOfBirth < maxDate || dateOfBirth > minDate) ? false : true;
+            return (DateOfBirth < maxDate || DateOfBirth > minDate) ? false : true;
         }
     }
 }
