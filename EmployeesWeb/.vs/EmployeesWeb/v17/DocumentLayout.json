@@ -7,10 +7,6 @@
       "RelativeMoniker": "D:0:0:{41F25785-7A66-432E-8928-8914D23C322A}|EmployeesWeb\\EmployeesWeb.csproj|solutionrelative:employeesweb\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{41F25785-7A66-432E-8928-8914D23C322A}|EmployeesWeb\\EmployeesWeb.csproj|c:\\xampp\\htdocs\\project\\employeesweb-backend\\employeesweb\\employeesweb\\models\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41F25785-7A66-432E-8928-8914D23C322A}|EmployeesWeb\\EmployeesWeb.csproj|solutionrelative:employeesweb\\models\\connection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{41F25785-7A66-432E-8928-8914D23C322A}|EmployeesWeb\\EmployeesWeb.csproj|c:\\xampp\\htdocs\\project\\employeesweb-backend\\employeesweb\\employeesweb\\models\\employeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{41F25785-7A66-432E-8928-8914D23C322A}|EmployeesWeb\\EmployeesWeb.csproj|solutionrelative:employeesweb\\models\\employeedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -26,21 +22,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Connection.cs",
-              "DocumentMoniker": "C:\\xampp\\htdocs\\project\\EmployeesWeb-Backend\\EmployeesWeb\\EmployeesWeb\\Models\\Connection.cs",
-              "RelativeDocumentMoniker": "EmployeesWeb\\Models\\Connection.cs",
-              "ToolTip": "C:\\xampp\\htdocs\\project\\EmployeesWeb-Backend\\EmployeesWeb\\EmployeesWeb\\Models\\Connection.cs",
-              "RelativeToolTip": "EmployeesWeb\\Models\\Connection.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T00:09:39.481Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -49,33 +32,33 @@
               "RelativeDocumentMoniker": "EmployeesWeb\\Controllers\\EmployeesController.cs",
               "ToolTip": "C:\\xampp\\htdocs\\project\\EmployeesWeb-Backend\\EmployeesWeb\\EmployeesWeb\\Controllers\\EmployeesController.cs",
               "RelativeToolTip": "EmployeesWeb\\Controllers\\EmployeesController.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAAAEYAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAACkAAAAAAAAAAAASwDoAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-13T23:25:26.638Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Employee.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\project\\EmployeesWeb-Backend\\EmployeesWeb\\EmployeesWeb\\Models\\Employee.cs",
               "RelativeDocumentMoniker": "EmployeesWeb\\Models\\Employee.cs",
               "ToolTip": "C:\\xampp\\htdocs\\project\\EmployeesWeb-Backend\\EmployeesWeb\\EmployeesWeb\\Models\\Employee.cs",
               "RelativeToolTip": "EmployeesWeb\\Models\\Employee.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-17T23:12:36.517Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "EmployeeDto.cs",
               "DocumentMoniker": "C:\\xampp\\htdocs\\project\\EmployeesWeb-Backend\\EmployeesWeb\\EmployeesWeb\\Models\\EmployeeDto.cs",
               "RelativeDocumentMoniker": "EmployeesWeb\\Models\\EmployeeDto.cs",
               "ToolTip": "C:\\xampp\\htdocs\\project\\EmployeesWeb-Backend\\EmployeesWeb\\EmployeesWeb\\Models\\EmployeeDto.cs",
               "RelativeToolTip": "EmployeesWeb\\Models\\EmployeeDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-14T19:55:18.582Z",
               "EditorCaption": ""

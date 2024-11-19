@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using System.Diagnostics.CodeAnalysis;
 using EmployeesWeb.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -53,7 +54,7 @@ namespace EmployeesWeb.Controllers
 
                 if (EmployeeExists(id, employee.Identification))
                 {
-                    if (!EmailExist(id, employee.Email))
+                    if (!EmailExist(id, employee.Email) && existingEmployee is not null)
                     {
                         existingEmployee.Name = employee.Name;
                         existingEmployee.Surname = employee.Surname;
