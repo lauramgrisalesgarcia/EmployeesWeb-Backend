@@ -11,6 +11,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddDbContext<Connection>(opt => opt.UseInMemoryDatabase("Employees"));
 
+// Description: Add CORS policity to allow all the origins, methods and headers. It is only for development
+// Author: Laura Grisales
+// Date: 18/11/2024
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: MyAllowSpecificOrigins,

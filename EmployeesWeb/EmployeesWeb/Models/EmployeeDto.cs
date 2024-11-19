@@ -1,4 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿// Description: EmployeeDto model. This will be the structure for the API
+// Author: Laura Grisales
+// Date: 18/11/2024
+using System.ComponentModel.DataAnnotations;
 
 namespace EmployeesWeb.Models
 {

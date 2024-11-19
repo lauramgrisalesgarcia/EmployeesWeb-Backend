@@ -1,5 +1,8 @@
-﻿using System.Data;
-using System.Diagnostics.CodeAnalysis;
+﻿// Description: Employee Controller. Here we admin all the methods forthe API
+// Author: Laura Grisales
+// Date: 18/11/2024
+
+using System.Data;
 using EmployeesWeb.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -16,14 +19,20 @@ namespace EmployeesWeb.Controllers
         {
             _context = context;
         }
-        // GET: api/Employees
+        // Description: GET all the employees
+        // Author: Laura Grisales
+        // Date: 18/11/2024
+        // URL: api/Employees
         [HttpGet]
         public async Task<ActionResult<IEnumerable<EmployeeDto>>> Getemployees()
         {
             return await _context.Employees.ToListAsync();
         }
 
-        // GET: api/Employees/5
+        // Description: GET one employee
+        // Author: Laura Grisales
+        // Date: 18/11/2024
+        // URL: api/Employees/{id}
         [HttpGet("{id}")]
         public async Task<ActionResult<EmployeeDto>> GetEmployee(long id)
         {
@@ -36,9 +45,10 @@ namespace EmployeesWeb.Controllers
 
             return employee;
         }
-
-        // PUT: api/Employees/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        // Description: PUT one employee
+        // Author: Laura Grisales
+        // Date: 18/11/2024
+        // URL: api/Employees/{id}
         [HttpPut("{id}")]
         public async Task<IActionResult> PutEmployee(long id, Employee employee)
         {
@@ -78,12 +88,14 @@ namespace EmployeesWeb.Controllers
                 return NotFound("El empleado no existe.");
             }
         }
-
-        // POST: api/Employees
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        // Description: POST a new employee
+        // Author: Laura Grisales
+        // Date: 18/11/2024
+        // URL: api/Employees
         [HttpPost]
         public async Task<ActionResult<EmployeeDto>> PostEmployee(Employee employee)
         {
+            // Description: Create a API estructure because we don't need the employee id
             var newEmployee = new EmployeeDto
             {
                 Identification = employee.Identification,
@@ -120,8 +132,10 @@ namespace EmployeesWeb.Controllers
 
             return await GetEmployee(newEmployee.Id);
         }
-
-        // DELETE: api/Employees/5
+        // Description: DELETE a employee
+        // Author: Laura Grisales
+        // Date: 18/11/2024
+        // URL: api/Employees/{id}
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteEmployee(long id)
         {
@@ -137,7 +151,10 @@ namespace EmployeesWeb.Controllers
 
             return Ok();
         }
-
+        // Description: DELETE a list of employees
+        // Author: Laura Grisales
+        // Date: 18/11/2024
+        // URL: api/Employees/list
         [HttpDelete("list")]
         public async Task<ActionResult> DeleteEmployees([FromBody] List<long> employeeIds)
         {
@@ -145,7 +162,7 @@ namespace EmployeesWeb.Controllers
             {
                 return BadRequest("No se han encontrado empleados para eliminar.");
             }
-
+            // Description: Finds all employees in the employeesId list
             var employeesToDelete = await _context.Employees
                                                   .Where(e => employeeIds.Contains(e.Id))
                                                   .ToListAsync();
@@ -160,27 +177,37 @@ namespace EmployeesWeb.Controllers
 
             return Ok(new { message = "Empleado(s) eliminado(s)", deletedIds = employeeIds });
         }
-
+        // Description: Returns true if the employee id exists
+        // Author: Laura Grisales
+        // Date: 18/11/2024
         private bool EmployeeExists(long id)
         {
             return _context.Employees.Any(e => e.Id == id);
         }
-
+        // Description: Returns true if the employee id and the employee identification exists
+        // Author: Laura Grisales
+        // Date: 18/11/2024
         private bool EmployeeExists(long id, string identification)
         {
             return _context.Employees.Any(e => e.Id == id && e.Identification.Equals(identification));
         }
-
+        // Description: Returns true if the employee identification or the employee email exists
+        // Author: Laura Grisales
+        // Date: 18/11/2024
         private bool EmployeeNotExists(string identification, string email)
         {
             return _context.Employees.Any(e => e.Identification.Equals(identification) || e.Email.Equals(email));
         }
-
+        // Description: Returns true if other employee has the same employee mail  
+        // Author: Laura Grisales
+        // Date: 18/11/2024
         private bool EmailExist(long id, string email)
         {
             return _context.Employees.Any(e => e.Id != id && e.Email.Equals(email));
         }
-
+        // Description: Returns true if the employee dateofbirth is between the range
+        // Author: Laura Grisales
+        // Date: 18/11/2024
         private bool EmployeeAge(DateOnly DateOfBirth)
         {
             DateTime todayDate = DateTime.Now;
