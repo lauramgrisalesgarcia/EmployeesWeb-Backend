@@ -2,14 +2,14 @@
 <h6>Back-end desarrollado en C# ASP.NET CORE WEB API Netcore 8.0</h6>
 <p>Desarrollado en estructura MVC (Modelo Vista Controlador)</p>
 <h3><strong><i>Especificaciones del proyecto:</i></strong></h3>
-<p>API para el sitio web de la empresa MORA (Creación única para el proyecto) que requiere la administración de los empleados asociados a la</p>
+<p>API para el sitio web de la empresa MORA (Creación única para el proyecto) que requiere la administración de los empleados asociados a la compañía</p>
 <p>Los campos deben tener las siguientes validaciones:</p>
 <ul>
 <li><strong>Nombre:</strong> Campo de texto obligatorio de máximo 100 caracteres</li>
 <li><strong>Apellido:</strong> Campo de texto opcional</li>
 <li><strong>Fecha de nacimiento:</strong> Campo de tipo fecha obligatorio. Mayor de 18 años y menor de 65 años</li>
-<li><strong>Email:</strong> Campo de texto obligatorio.</li>  
-<li><strong>Rol:</strong> Selección de rol obligatorio.</li>  
+<li><strong>Email:</strong> Campo de texto obligatorio</li>  
+<li><strong>Rol:</strong> Selección de rol obligatorio</li>  
 </ul>
 <p>Validaciones generales:</p>
 <ul>
